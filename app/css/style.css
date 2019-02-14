@@ -1,16 +1,49 @@
-.wrap {
-  max-width: 80%;
+@import url("https://fonts.googleapis.com/css?family=Ubuntu:400,700");
+body {
+  font: 14px/18px 'Ubuntu', sans-serif;
 }
 
-.tasks {
+.wrap {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.lab {
+  border: 1px solid red;
+  padding: 5px 10px;
+}
+
+.lab .tasks {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.tasks div {
-  width: 300px;
-  border: 1px solid red;
-  background: green;
+.lab .tasks .task {
+  margin-top: 10px;
+  max-width: 49%;
+}
+
+.lab .tasks .task .description {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.lab .tasks .task .result {
+  margin-top: 10px;
+}
+
+.lab .tasks .task .result span {
+  font-weight: bold;
+}
+
+.lab .tasks .task button,
+.lab .tasks .task input {
+  margin-top: 15px;
+  padding: 2px 5px;
+}
+
+.lab .tasks .task button {
+  cursor: pointer;
 }

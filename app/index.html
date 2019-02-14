@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +9,30 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <div class="wrap">
         <ul>
             <li class="lab">
                 <h2>Lab #1</h2>
                 <div class="tasks">
-                        <div class="task-1">
-                                <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam iure nesciunt nobis consequatur eaque nisi.</p>
-                                <p class="description">Example</p>
-                                <input type="text" id="lab-1" class="lab_input">
-                                <button type="submit">Вычислить</button>
-                                <p>Result : <span class="result"></span></p>
-                        </div>
-                        <div class="task-2">
-                                <p class="description">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquam iure nesciunt nobis consequatur eaque nisi.</p>
-                                <p class="description">Example</p>
-                                <input type="text" id="lab-1" class="lab_input">
-                                <button type="submit">Вычислить</button>
-                                <p>Result : <span class="result"></span></p>
-                        </div>
+                    <div class="task" id="lab-1-t1" >
+                        <p class="description">Să se scrie un program care citește un număr de ani și calculează
+                            numărul de luni, zile
+                            și ore corespunzătoare. Se consideră că un an are 365 zile.</p>
+                        <p>Exemplu: Date de intrare: 2. Date de ieșire: 24 luni 730 zile 17520 ore.</p>
+                        <input type="text" class="lab_input" placeholder="Введите количество лет">
+                        <button type="submit" onclick="lab_1_t1('lab-1-t1')">Вычислить</button>
+                        <p class=result>Result : <span></span></p>
+                    </div>
+                    <div class="task" id="lab-1-t2">
+                        <p class="description">Se cunoaște vârsta lui Nicolae – X ani și al lui Mihai – Z ani. Să se calculeze vârsta
+                            medie a acestora și diferența lor de vârstă.</p>
+                        <p>Введите возраст ребят через запятую</p>
+                        <input type="text" class="lab_input" placeholder="Например: 25,20">
+                        <button type="submit">Вычислить</button>
+                        <p class="result">Result : <span>1136515</span></p>
+                    </div>
                 </div>
             </li>
             <li class="lab">2</li>
@@ -36,4 +41,5 @@
     </div>
     <script src="./js/main.js"></script>
 </body>
+
 </html>

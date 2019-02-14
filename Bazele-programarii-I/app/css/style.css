@@ -1,0 +1,16 @@
+.wrap {
+  max-width: 80%;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.tasks div {
+  width: 300px;
+  border: 1px solid red;
+  background: yellow;
+}

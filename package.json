@@ -1,7 +1,7 @@
 {
   "name": "bp1-labs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Labs for Bazele programarii I",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +14,13 @@
     "gulp": "^4.0.0",
     "gulp-eslint": "^5.0.0",
     "gulp-sass": "^4.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mostenn/Bazele-programarii-I.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mostenn/Bazele-programarii-I/issues"
+  },
+  "homepage": "https://github.com/Mostenn/Bazele-programarii-I#readme"
 }

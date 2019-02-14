@@ -1,20 +1,33 @@
-var data;
+var data, res;
 
 function readData(a) {
     let elem = document.getElementById(a).getElementsByClassName('lab_input')[0];
     data = elem.value;
-    return data;
+    return data;    
 };
-function result(a,result){
-    let elem = document.getElementById(a).getElementsByClassName('result').getElementsByTagName('span')[0];
-    elem.value = (result);
+
+function result(a, res) {
+    let elem = document.getElementById(a).getElementsByClassName('result')[0];
+    elem.innerHTML = res;
+    
 }
 
-function lab_1_t1(a) {
+function reset(a) {
+    let elem = document.getElementById(a).getElementsByClassName('lab_input')[0];
+    elem.value = "";
+    
+}
+
+function task_1(a) {
     readData(a);
-    let d,m,h;
-    d = data * 365;
-    m = data * 12;
-    h = data * 8760;
-    result = ('string');
+    let m = data * 12; //months
+    let d = data * 365; //days
+    let h = data * 8760; //hours
+    res = "Months " + m + " Days " + d + " Hours " + h;
+    result(a, res);
+}
+function task_2(a){
+    readData(a);
+    res = data / 2;
+    result(a, res);
 }

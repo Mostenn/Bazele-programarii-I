@@ -12,7 +12,6 @@ function result(a,result){
 
 function lab_1_t1(a) {
     readData(a);
-    // console.log(data);
     let d,m,h;
     d = data * 365;
     m = data * 12;

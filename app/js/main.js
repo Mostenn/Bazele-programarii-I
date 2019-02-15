@@ -15,6 +15,8 @@ function result(a, res) {
 function reset(a) {
     let elem = document.getElementById(a).getElementsByClassName('lab_input')[0];
     elem.value = "";
+    let elem1 = document.getElementById(a).getElementsByClassName('result')[0];
+    elem1.innerHTML = "";
     
 }
 

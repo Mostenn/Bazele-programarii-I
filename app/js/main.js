@@ -1,4 +1,7 @@
-var data, res;
+'use strict'
+
+
+var data, res, arr;
 
 function readData(a) {
     let elem = document.getElementById(a).getElementsByClassName('lab_input')[0];
@@ -17,7 +20,12 @@ function reset(a) {
     elem.value = "";
     let elem1 = document.getElementById(a).getElementsByClassName('result')[0];
     elem1.innerHTML = "";
-    
+}
+function string(data) {
+    let str = data;
+    arr = str.split(' ');
+    arr = arr.map(parseFloat).filter(Number);
+    return arr;    
 }
 
 function task_1(a) {
@@ -30,6 +38,10 @@ function task_1(a) {
 }
 function task_2(a){
     readData(a);
-    res = data / 2;
+    string(data);
+    let summa = arr.reduce(function(sum,current){
+        return sum + current
+    });
+    res = summa / arr.length;
     result(a, res);
 }

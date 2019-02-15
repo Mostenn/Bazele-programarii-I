@@ -25,6 +25,11 @@ body {
   max-width: 49%;
 }
 
+.lab .tasks .task p:not(.description),
+.lab .tasks .task p:not(p:last-of-type) {
+  text-align: center;
+}
+
 .lab .tasks .task .description {
   font-size: 1.2em;
   margin-bottom: 10px;

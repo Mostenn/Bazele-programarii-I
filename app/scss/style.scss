@@ -1,42 +1,63 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,700');
-body{
+
+body {
     font: 14px/18px 'Ubuntu', sans-serif;
 }
-.wrap{
-    max-width: 80%;
+
+.wrap {
+    max-width: 85%;
     margin: 0 auto;
 }
-.lab{
-    border:1px solid red;
-    padding: 5px 10px;
-    .tasks{
+
+.lab {
+    // border:1px solid red;
+    padding: 15px 10px;
+
+    h2 {
+        text-align: center;
+        padding: 8px 0 12px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .tasks {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
-        .task{
+
+        .task {
             margin-top: 10px;
             max-width: 49%;
-            p:not(.description),
-            p:not(p:last-of-type){
-                text-align: center;
+
+            p {
+
+                :not(.description),
+                :not(:last-of-type) {
+                    text-align: center;
+                }
             }
-            .description{
+
+            h3 {
+
+                margin: 10px 0;
+            }
+
+            .description {
                 font-size: 1.2em;
                 margin-bottom: 10px;
             }
-            .result{
-                margin-top: 10px;
-                span{
-                    font-weight: bold;
-                }
+
+            .result {
+                font-weight: 700;
             }
+
             button,
-            input{
+            input {
                 margin-top: 15px;
-                padding:2px 5px;
+                padding: 2px 5px;
             }
-            button{
+
+            button {
                 cursor: pointer;
             }
         }

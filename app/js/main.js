@@ -3,7 +3,15 @@
 //data отвечает за данные которые передаются из инпута
 //res отвечает за передачу результата
 //arr отвечает за передачу массива
-var data, res, arr, l;
+//numb отвечает за передачу числа
+var data, res, arr, l, numb;
+
+//--------------впомогательные функции----------
+
+//
+//TODO фильтрация букв в веденных строках при преобразовании
+//
+
 //чтение данных из инпута
 function readData(a) {
     let elem = document.getElementById(a).getElementsByClassName('lab_input')[0];
@@ -25,36 +33,40 @@ function reset(a) {
 }
 //преобразование строки введенных чисел через пробел в массив чисел
 function string(data) {
-    let str = data;
-    arr = str.split(' ');
-    arr = arr.map(parseFloat).filter(Number); //фильтруем числа
+    arr = data.split(' ');
+    arr = arr.map(parseFloat); //фильтруем числа
     return arr;
+}
+//
+function number(data) {
+    numb = parseInt(data);
+    return numb;
 }
 //преобразование строки в массив чисел
 function stringNumb(data) {
-    let str = data;
-    arr = str.split('');
-    arr = arr.map(parseFloat).filter(Number); //фильтруем числа
+    arr = data.split('');
+    arr = arr.map(parseFloat); //фильтруем числа
     return arr;
 }
 //преобразование строки в массив из цифр введеного числа
-function numberToArr(data){
-    let str = data;
-    arr = str.split(' ');
-    arr = arr.map(parseFloat).filter(Number);
-    console.log(arr);
+function numberToArr(data) {
+    arr = data.split(' ');
+    arr = arr.map(parseFloat);
+    return arr;
 }
 //сортировка массива, от большего к меньшему числу a[0] > a[1] > a[i]
-function sortArr(arr){
-    function sortNumbers(a, b){
+function sortArr(arr) {
+    function sortNumbers(a, b) {
         if (a < b) return -1;
-        if (a > b) return 1;        
+        if (a > b) return 1;
     }
     arr.sort(sortNumbers); // получили массив от меньшего к большему числу
     arr.reverse(); //меняем порядок элементов на обратный
     l = arr.length; //индекс последнего элемента
     return arr, l;
 }
+//----------Решение задач------------------
+
 //конвертер, введенное кол-во лет преобразуем в дни, месяцы, и часы
 function task_1(a) {
     readData(a);
@@ -75,21 +87,202 @@ function task_2(a) {
     result(a, res);
 }
 // самая большая разница между введенными числами
-function task_3(a){
+function task_3(a) {
     readData(a);
     string(data);
     sortArr(arr);
     //индекс последнего эелемента массива = длина массива - 1
     //вычитаем из самого большого элемента самый маленький a[0] - a[i]
-    res = arr[0] - arr[arr.length - 1];    
+    res = arr[0] - arr[arr.length - 1];
     result(a, res);
 }
 // самое большое число из цифр введенного числа
-function task_4(a){
+function task_4(a) {
     readData(a);
     numberToArr(data);
     stringNumb(data);
     sortArr(arr);
-    res = arr.join('');    
+    res = arr.join('');
+    result(a, res);
+}
+// уровень оценки введенной учеником
+function task_5(a) {
+    readData(a);
+    number(data);
+    switch (numb) {
+        case 1:
+            res = "Неудовлетворительная оценка";
+            break;
+        case 2:
+            res = "Неудовлетворительная оценка";
+            break;
+        case 3:
+            res = "Неудовлетворительная оценка";
+            break;
+        case 4:
+            res = "Неудовлетворительная оценка";
+            break;
+        case 5:
+            res = "Удовлетворительная оценка";
+            break;
+        case 6:
+            res = "Удовлетворительная оценка";
+            break;
+        case 7:
+            res = "Хорошая оценка";
+            break;
+        case 8:
+            res = "Хорошая оценка";
+            break;
+        case 9:
+            res = "Отличная оценка";
+            break;
+        case 10:
+            res = "Отличная оценка";
+            break;
+        default:
+            res = "Я таких оценок не знаю";
+
+    }
+    result(a, res);
+}
+
+function task_6(a) {
+    readData(a);
+    stringNumb(data);
+    let s = arr[0];
+    let d = arr[1];
+    let e = arr[2];
+    switch (s) {
+        case 1:
+            s = "Сто";
+            break;
+        case 2:
+            s = "Двести";
+            break;
+        case 3:
+            s = "Триста";
+            break;
+        case 4:
+            s = "Четыреста";
+            break;
+        case 5:
+            s = "Пятьсот";
+            break;
+        case 6:
+            s = "Шестьсот";
+            break;
+        case 7:
+            s = "Семьсот";
+            break;
+        case 8:
+            s = "Восемьсот";
+            break;
+        case 9:
+            s = "Девятьсот";
+            break;
+    }
+    switch (d) {
+        case 0:
+            "";
+            break;
+        case 1:
+            switch (e) {
+                case 1:
+                    d = "одиннадцать";
+                    e = "";
+                    break;
+                case 2:
+                    d = "двенадцать";
+                    e = "";
+                    break;
+                case 3:
+                    d = "тринадцать";
+                    e = "";
+                    break;
+                case 4:
+                    d = "четырнадцать";
+                    e = "";
+                    break;
+                case 5:
+                    d = "пятнадцать";
+                    e = "";
+                    break;
+                case 6:
+                    d = "шестнадцать";
+                    e = "";
+                    break;
+                case 7:
+                    d = "семнадцать";
+                    e = "";
+                    break;
+                case 8:
+                    d = "восемьнадцать";
+                    e = "";
+                    break;
+                case 9:
+                    d = "девятнадцать";
+                    e = "";
+                    break;
+            }
+            break;
+        case 2:
+            d = "двадцать";
+            break;
+        case 3:
+            d = "тридцать";
+            break;
+        case 4:
+            d = "сорок";
+            break;
+        case 5:
+            d = "пятьдесят";
+            break;
+        case 6:
+            d = "шестьдесят";
+            break;
+        case 7:
+            d = "семьдесят";
+            break;
+        case 8:
+            d = "восемьдесят";
+            break;
+        case 9:
+            d = "девяносто";
+            break;
+    }
+    switch (e) {
+        case 0:
+            e = "";
+            break;
+        case 1:
+            e = "один";
+            break;
+        case 2:
+            e = "два";
+            break;
+        case 3:
+            e = "три";
+            break;
+        case 4:
+            e = "четыре";
+            break;
+        case 5:
+            e = "пять";
+            break;
+        case 6:
+            e = "шесть";
+            break;
+        case 7:
+            e = "семь";
+            break;
+        case 8:
+            e = "восемь";
+            break;
+        case 9:
+            e = "девять";
+            break;
+    }
+    res = s + " " + d + " " + e;
     result(a, res);
 }

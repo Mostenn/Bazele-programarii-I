@@ -30,11 +30,6 @@ body {
   max-width: 49%;
 }
 
-.lab .tasks .task p :not(.description),
-.lab .tasks .task p :not(:last-of-type) {
-  text-align: center;
-}
-
 .lab .tasks .task h3 {
   margin: 10px 0;
 }
@@ -52,6 +47,7 @@ body {
 .lab .tasks .task input {
   margin-top: 15px;
   padding: 2px 5px;
+  font-weight: 700;
 }
 
 .lab .tasks .task button {

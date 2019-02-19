@@ -17,7 +17,7 @@ function readData(a) {
     let elem = document.getElementById(a).getElementsByClassName('lab_input')[0];
     data = elem.value;
     return data;
-};
+}
 //вывод результата
 function result(a, res) {
     let elem = document.getElementById(a).getElementsByClassName('result')[0];
@@ -37,7 +37,7 @@ function string(data) {
     arr = arr.map(parseFloat); //фильтруем числа
     return arr;
 }
-//
+//строка в 1 число
 function number(data) {
     numb = parseInt(data);
     return numb;
@@ -284,5 +284,42 @@ function task_6(a) {
             break;
     }
     res = s + " " + d + " " + e;
+    result(a, res);
+}
+//сумма все чисел до числа n
+function task_7(a) {
+    readData(a);
+    number(data);
+    let cet = 0;
+    let necet = 0;
+    let all = 0;
+    for (var i = 0; i <= numb; i++) {
+        if (i % 2 == 0) {
+            cet = cet + i;
+        }
+        if (i % 2 != 0) {
+            necet = necet + i;
+        }
+        all = all + i;
+    }
+    res = "Сумма четных: " + cet + ", Сумма нечетных: " + necet + ", Сумма всех: " + all + " чисел. ";
+    result(a, res);
+}
+//задача с процентами
+function task_8(a) {
+    readData(a);
+    string(data);
+    let month = arr[1];
+    if (typeof month == "undefined") {
+        month = 0;
+    }
+    var depozit = arr[0];
+    console.log(depozit, arr[1]);
+    for (var i = 0; i < month; i++) {
+        var procent = depozit * 0.02;
+        depozit = depozit + procent;
+    }
+
+    res = "Ваш депозит через " + month + " месяцев составит: " + Math.round(depozit * 1000) / 1000 + " лей(ев)";
     result(a, res);
 }

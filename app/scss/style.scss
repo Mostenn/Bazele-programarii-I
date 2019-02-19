@@ -29,14 +29,6 @@ body {
             margin-top: 10px;
             max-width: 49%;
 
-            p {
-
-                :not(.description),
-                :not(:last-of-type) {
-                    text-align: center;
-                }
-            }
-
             h3 {
 
                 margin: 10px 0;
@@ -55,6 +47,7 @@ body {
             input {
                 margin-top: 15px;
                 padding: 2px 5px;
+                font-weight: 700;
             }
 
             button {

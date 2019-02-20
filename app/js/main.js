@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
 //data отвечает за данные которые передаются из инпута
 //res отвечает за передачу результата
 //arr отвечает за передачу массива
 //numb отвечает за передачу числа
-var data, res, arr, l, numb;
+let data, res, arr, l, numb;
 
 //--------------впомогательные функции----------
 
@@ -184,7 +184,6 @@ function task_6(a) {
     }
     switch (d) {
         case 0:
-            "";
             break;
         case 1:
             switch (e) {
@@ -293,11 +292,11 @@ function task_7(a) {
     let cet = 0;
     let necet = 0;
     let all = 0;
-    for (var i = 0; i <= numb; i++) {
-        if (i % 2 == 0) {
+    for (let i = 0; i <= numb; i++) {
+        if (i % 2 === 0) {
             cet = cet + i;
         }
-        if (i % 2 != 0) {
+        if (i % 2 !== 0) {
             necet = necet + i;
         }
         all = all + i;
@@ -313,10 +312,10 @@ function task_8(a) {
     if (typeof month == "undefined") {
         month = 0;
     }
-    var depozit = arr[0];
+    let depozit = arr[0];
     console.log(depozit, arr[1]);
-    for (var i = 0; i < month; i++) {
-        var procent = depozit * 0.02;
+    for (let i = 0; i < month; i++) {
+        let procent = depozit * 0.02;
         depozit = depozit + procent;
     }
 
@@ -336,13 +335,13 @@ function task_10(a) {
     stringNumb(data);
     let cet = [];
     let necet = [];
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i] % 2 == 0) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
             cet = cet.concat(arr[i]);
         }
-        if (arr[i] % 2 != 0) {
+        if (arr[i] % 2 !== 0) {
             necet = necet.concat(arr[i])
-        };
+        }
 
     }
     res = "Четные: " + cet.join(" ") + " , Нечетные: " + necet.join(" ");
@@ -354,20 +353,17 @@ function task_10(a) {
 function task_11(a) {
     readData(a);
     string(data);
-    var x, x1, x2, f, e, q, d;
-    f = arr[0];
-    e = arr[1];
-    q = arr[2];
-    console.log(q);
-    var d = Math.pow(e,2) - (4 * f * q);
+    let f = arr[0], e = arr[1], q = arr[2], d;
+    d = Math.pow(e, 2) - (4 * f * q);
+    let x, x1, x2;
     if (d > 0) {
         x1 = (-e + Math.sqrt(d)) / (2 * f);
         x2 = (-e - Math.sqrt(d)) / (2 * f);
-        // res = "Корни уравнения" + x1 + " , " + x2;
-        console.log(x1);
-    } else if (d = 0) {
+        res = "Корни уравнения " + x1 + " , " + x2;
+    } else
+    if (d === 0) {
         x = (-e) / (2 * f);
-        res = "Корень уравнения" + x;
+        res = "Корень уравнения " + x;
     } else if (d < 0) {
         res = "Уравнение не имеет корней";
     }
@@ -376,5 +372,13 @@ function task_11(a) {
 }
 //площадь и периметр прямоугольника
 function task_12(a) {
+    readData(a);
+    string(data);
+    let p = arr[0];
+    let q = arr[1]
+    let area = p * q;
+    let perimetr = 2 * (p + q);
+    res = "Площадь: " + area + " " + "Периметр: " + perimetr;
+    result(a, res);
 
 }

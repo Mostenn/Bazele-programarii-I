@@ -52,4 +52,5 @@ body {
 
 .lab .tasks .task button {
   cursor: pointer;
+  font-weight: 400;
 }

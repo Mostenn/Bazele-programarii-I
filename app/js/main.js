@@ -323,3 +323,58 @@ function task_8(a) {
     res = "Ваш депозит через " + month + " месяцев составит: " + Math.round(depozit * 1000) / 1000 + " лей(ев)";
     result(a, res);
 }
+// Количество цифр в числе
+function task_9(a) {
+    readData(a);
+    stringNumb(data);
+    res = arr.length;
+    result(a, res);
+}
+// количество четных и нечетных цифр в введнном числе
+function task_10(a) {
+    readData(a);
+    stringNumb(data);
+    let cet = [];
+    let necet = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) {
+            cet = cet.concat(arr[i]);
+        }
+        if (arr[i] % 2 != 0) {
+            necet = necet.concat(arr[i])
+        };
+
+    }
+    res = "Четные: " + cet.join(" ") + " , Нечетные: " + necet.join(" ");
+    result(a, res);
+
+}
+//решение квадратного уравнения
+
+function task_11(a) {
+    readData(a);
+    string(data);
+    var x, x1, x2, f, e, q, d;
+    f = arr[0];
+    e = arr[1];
+    q = arr[2];
+    console.log(q);
+    var d = Math.pow(e,2) - (4 * f * q);
+    if (d > 0) {
+        x1 = (-e + Math.sqrt(d)) / (2 * f);
+        x2 = (-e - Math.sqrt(d)) / (2 * f);
+        // res = "Корни уравнения" + x1 + " , " + x2;
+        console.log(x1);
+    } else if (d = 0) {
+        x = (-e) / (2 * f);
+        res = "Корень уравнения" + x;
+    } else if (d < 0) {
+        res = "Уравнение не имеет корней";
+    }
+    console.log(x1, x2, x, d);
+    result(a, res);
+}
+//площадь и периметр прямоугольника
+function task_12(a) {
+
+}

@@ -10,7 +10,7 @@ let data, res, arr, l, numb;
 
 //
 // TODO фильтрация букв в веденных строках при преобразовании
-// TODO Проверить работоспособность всехх программ
+// TODO Проверить работоспособность всех программ
 // TODO переделать onclick на event listener
 //
 
@@ -382,5 +382,11 @@ function task_12(a) {
     let perimetr = 2 * (p + q);
     res = "Площадь: " + area + " " + "Периметр: " + perimetr;
     result(a, res);
+}
+function task_13(a){
+    readData(a);
+
+}
+function task_14(a){
 
 }

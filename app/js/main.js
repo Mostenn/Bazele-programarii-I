@@ -11,7 +11,6 @@ let data, res, arr, l, numb;
 //
 // TODO фильтрация букв в веденных строках при преобразовании
 // TODO Проверить работоспособность всех программ
-// TODO переделать onclick на event listener
 //
 
 //чтение данных из инпута
@@ -26,7 +25,7 @@ function result(a, res) {
     elem.innerHTML = res;
 
 }
-//очистка введенных данных и результата прошлого вычесления
+//очистка введенных данных и результата прошлого вычисления
 function reset(a) {
     let elem = document.getElementById(a).getElementsByClassName('lab_input')[0];
     elem.value = "";
@@ -75,7 +74,7 @@ function task_1(a) {
     let m = data * 12; //months
     let d = data * 365; //days
     let h = data * 8760; //hours
-    res = "Months " + m + " Days " + d + " Hours " + h;
+    res = "Months " + m + ", Days " + d + ", Hours " + h;
     result(a, res);
 }
 //считаем среднее значение
@@ -387,6 +386,75 @@ function task_13(a){
     readData(a);
 
 }
+//вывод значения функции f(x)
 function task_14(a){
+    let fx = [];
+    for (let i = -2; i <= 5; i++){
+        let f = 3 * (i * i) + i + 2;
+        console.log(f);
+        fx.push(f);
+    }
+    res = fx;
+    result(a,res);
+}
+//
+function task_15(a){
+    readData(a);
+    string(data);
+    let x = arr[0];
+    let last = arr.length - 1;
+    let y = arr[last];
+    arr[0] = y;
+    arr[last] = x;
+    res = arr;
+    result(a, res);
 
 }
+//
+function task_16(a){
+    readData(a);
+    string(data);
+    for(let i = 1; i < arr.length - 1; i++){
+        if(i % 2 == 0){
+            arr[i] = arr[i] * arr[0];
+        }else{
+            arr[i] = arr[i] * arr[arr.length - 1];
+        }
+        console.log(i);
+    }
+    res = arr;
+    result(a, res);
+}
+//
+function task_17(){}
+//
+function task_18(a){
+    readData(a);
+    string(data);
+    let cet = [];
+    let necet = [];
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] % 2 == 0){
+            cet.push(arr[i]);
+        }else{
+            necet.push(arr[i]);
+        }
+    }
+    res = "Четные: " + cet + ". Нечетные: " + necet;
+    result(a, res);
+}
+//
+function task_19(a){
+    readData(a);
+
+}
+//
+function task_20(a){}
+//
+function task_21(a){}
+//
+function task_22(a){}
+//
+function task_23(a){}
+//
+function task_24(a){}

@@ -4,7 +4,7 @@
 //res отвечает за передачу результата
 //arr отвечает за передачу массива
 //numb отвечает за передачу числа
-let data, res, arr, l, numb;
+let data, data2, res, arr, arr2, l, numb;
 
 //--------------впомогательные функции----------
 
@@ -19,6 +19,12 @@ function readData(a) {
     data = elem.value;
     return data;
 }
+
+function readData2(a) {
+    let elem2 = document.getElementById(a).getElementsByClassName('lab_input')[1];
+    data2 = elem2.value;
+    return data2;
+}
 //вывод результата
 function result(a, res) {
     let elem = document.getElementById(a).getElementsByClassName('result')[0];
@@ -31,12 +37,20 @@ function reset(a) {
     elem.value = "";
     let elem1 = document.getElementById(a).getElementsByClassName('result')[0];
     elem1.innerHTML = "";
+    let elem2 = document.getElementById(a).getElementsByClassName('lab_input')[1];
+    elem2.value = "";
 }
 //преобразование строки введенных чисел через пробел в массив чисел
 function string(data) {
     arr = data.split(' ');
     arr = arr.map(parseFloat); //фильтруем числа
     return arr;
+}
+//
+function stringLetters() {
+    arr = data.split('');
+    arr2 = data2.split('');
+    return arr, arr2;
 }
 //строка в 1 число
 function number(data) {
@@ -354,7 +368,10 @@ function task_10(a) {
 function task_11(a) {
     readData(a);
     string(data);
-    let f = arr[0], e = arr[1], q = arr[2], d;
+    let f = arr[0],
+        e = arr[1],
+        q = arr[2],
+        d;
     d = Math.pow(e, 2) - (4 * f * q);
     let x, x1, x2;
     if (d > 0) {
@@ -382,23 +399,37 @@ function task_12(a) {
     res = "Площадь: " + area + " " + "Периметр: " + perimetr;
     result(a, res);
 }
-function task_13(a){
+//
+function task_13(a) {
     readData(a);
+    string(data);
+    let n = arr.length;
+    let e = Math.abs(arr[0]);
+    for (let i = 1; i < n; i++) {
+        let b = Math.abs(arr[i]),
+            c = e;
+        while (e && b) {
+            e > b ? e %= b : b %= e;
+        }
+        e = Math.abs(c * arr[i]) / (e + b);
+    }
+    res = e;
+    result(a, res);
 
 }
 //вывод значения функции f(x)
-function task_14(a){
+function task_14(a) {
     let fx = [];
-    for (let i = -2; i <= 5; i++){
+    for (let i = -2; i <= 5; i++) {
         let f = 3 * (i * i) + i + 2;
         console.log(f);
         fx.push(f);
     }
     res = fx;
-    result(a,res);
+    result(a, res);
 }
 //
-function task_15(a){
+function task_15(a) {
     readData(a);
     string(data);
     let x = arr[0];
@@ -411,13 +442,13 @@ function task_15(a){
 
 }
 //
-function task_16(a){
+function task_16(a) {
     readData(a);
     string(data);
-    for(let i = 1; i < arr.length - 1; i++){
-        if(i % 2 == 0){
+    for (let i = 1; i < arr.length - 1; i++) {
+        if (i % 2 == 0) {
             arr[i] = arr[i] * arr[0];
-        }else{
+        } else {
             arr[i] = arr[i] * arr[arr.length - 1];
         }
         console.log(i);
@@ -426,17 +457,33 @@ function task_16(a){
     result(a, res);
 }
 //
-function task_17(){}
+function task_17(a) {
+    readData(a);
+    readData2(a);
+    string(data);
+    let res1 = [];
+    let res2 = [];
+    let m = data2;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] >= 1 && arr[i] <= m) {
+            res1.push(arr[i]);
+        } else {
+            res2.push(arr[i]);
+        }
+    }
+    res = "Есть в интервале: " + res1 + "; нет в интервале: " + res2;
+    result(a, res);
+}
 //
-function task_18(a){
+function task_18(a) {
     readData(a);
     string(data);
     let cet = [];
     let necet = [];
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i] % 2 == 0){
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 0) {
             cet.push(arr[i]);
-        }else{
+        } else {
             necet.push(arr[i]);
         }
     }
@@ -444,17 +491,30 @@ function task_18(a){
     result(a, res);
 }
 //
-function task_19(a){
+function task_19(a) {
     readData(a);
+    readData2(a);
+    // let newArr = [];
+    // for (let i = 0; i < arr.length; i++) {
+    //     for (let j = 0; j < arr2.length; j++) {
+    //         if(arr[i] != arr2[j]) newArr.push(arr[i]);
+    //     }
+        
+    // }
+    let newArr = [];
+    for(let i = 0; i < data2.length; i++){
+        newArr = data.replace(data2[i], "");
+    }
 
+    console.log(data,data2,newArr);
 }
 //
-function task_20(a){}
+function task_20(a) {}
 //
-function task_21(a){}
+function task_21(a) {}
 //
-function task_22(a){}
+function task_22(a) {}
 //
-function task_23(a){}
+function task_23(a) {}
 //
-function task_24(a){}
+function task_24(a) {}

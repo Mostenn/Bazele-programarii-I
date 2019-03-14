@@ -57,3 +57,11 @@ body {
         }
     }
 }
+#matrix{
+    margin: 10px 0;
+    & td{
+        padding: 3px;
+        border: 1px solid #000;
+        text-align: center;
+    }
+}

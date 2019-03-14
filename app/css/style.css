@@ -54,3 +54,13 @@ body {
   cursor: pointer;
   font-weight: 400;
 }
+
+#matrix {
+  margin: 10px 0;
+}
+
+#matrix td {
+  padding: 3px;
+  border: 1px solid #000;
+  text-align: center;
+}

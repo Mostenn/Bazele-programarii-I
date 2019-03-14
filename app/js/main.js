@@ -48,9 +48,13 @@ function string(data) {
 }
 //
 function stringLetters() {
-    arr = data.split('');
-    arr2 = data2.split('');
-    return arr, arr2;
+    if (!data2) {
+        arr = data.split('');
+    } else if (data2) {
+        arr = data.split('');
+        arr2 = data2.split('');
+        return arr, arr2;
+    }
 }
 //строка в 1 число
 function number(data) {
@@ -80,6 +84,28 @@ function sortArr(arr) {
     l = arr.length; //индекс последнего элемента
     return arr, l;
 }
+//matrix
+// (function () {
+//     let table = document.createDocumentFragment();
+//     let arr = [];
+//     for (let i = 0; i < 2; i++) {
+//         let tr = document.createElement('tr');
+//         arr[i] = [];
+//         for (let j = 0; j < 3; j++) {
+//             let td = document.createElement('td');
+//             td.innerHTML = arr[i][j] = getRandom();
+//             tr.appendChild(td);
+//         }
+//         table.appendChild(tr);
+//     }
+//     document.getElementById('matrix').appendChild(table);
+
+//     function getRandom() {
+//         let min = 2;
+//         let max = 15;
+//         return Math.floor(Math.random() * (max - min)) + min;
+//     }
+// })();
 //----------Решение задач------------------
 
 //конвертер, введенное кол-во лет преобразуем в дни, месяцы, и часы
@@ -385,7 +411,6 @@ function task_11(a) {
     } else if (d < 0) {
         res = "Уравнение не имеет корней";
     }
-    console.log(x1, x2, x, d);
     result(a, res);
 }
 //площадь и периметр прямоугольника
@@ -494,24 +519,73 @@ function task_18(a) {
 function task_19(a) {
     readData(a);
     readData2(a);
-    // let newArr = [];
-    // for (let i = 0; i < arr.length; i++) {
-    //     for (let j = 0; j < arr2.length; j++) {
-    //         if(arr[i] != arr2[j]) newArr.push(arr[i]);
-    //     }
-        
-    // }
-    let newArr = [];
-    for(let i = 0; i < data2.length; i++){
-        newArr = data.replace(data2[i], "");
+    let rep = new RegExp([data2], 'gi');
+    res = data.replace(rep, '');
+    result(a, res);
+}
+
+//
+function task_20(a) {
+    readData(a);
+    stringLetters();
+    let gl = 0;
+    let sogl = 0;
+    let arrGl = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    let arrSogl = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'z', 'B', 'C', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'V', 'W', 'X', 'Z']
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arrGl.length; j++) {
+            if (arr[i] == arrGl[j]) {
+                gl++;
+            }
+        }
+        for (let k = 0; k < arrSogl.length; k++) {
+            if (arr[i] == arrSogl[k]) {
+                sogl++;
+            }
+        }
+    }
+    let sravn;
+    if (gl == sogl) {
+        sravn = '; Равное количество';
+    } else {
+        sravn = '; Не равное количество';
     }
 
-    console.log(data,data2,newArr);
+    res = 'Гласных: ' + gl + ', Согласных: ' + sogl + sravn;
+    result(a, res);
+
 }
 //
-function task_20(a) {}
-//
-function task_21(a) {}
+function task_21(a) {
+    readData(a);
+    let n = data.split(' ',1);
+    let number = 0;
+    function matrix(n) {
+        let table = document.createDocumentFragment();
+        let arr = [];
+        for (let i = 0; i < n; i++) {
+            let tr = document.createElement('tr');
+            arr[i] = [];
+            for (let j = 0; j < n; j++) {
+                let td = document.createElement('td');
+                td.innerHTML = arr[i][j] = getNumber();
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        document.getElementById('matrix').appendChild(table);
+
+        function getNumber() {
+            for(let ij = 0; ij > 0; ij++){
+                if(ij % 2 == 0){
+                    return ij;
+                }
+            }
+        }
+    }
+    // console.log(n);
+    matrix(n);
+}
 //
 function task_22(a) {}
 //

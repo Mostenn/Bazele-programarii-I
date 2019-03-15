@@ -558,8 +558,9 @@ function task_20(a) {
 //
 function task_21(a) {
     readData(a);
-    let n = data.split(' ',1);
-    let number = 0;
+    let n = data.split(' ', 1);
+    let nmb;
+
     function matrix(n) {
         let table = document.createDocumentFragment();
         let arr = [];
@@ -576,10 +577,12 @@ function task_21(a) {
         document.getElementById('matrix').appendChild(table);
 
         function getNumber() {
-            for(let ij = 0; ij > 0; ij++){
-                if(ij % 2 == 0){
-                    return ij;
+            let m = 4;
+            for (let u = 0; u < m; u++) {
+                if (u == 0) {
+                    return 2;
                 }
+                return u;
             }
         }
     }

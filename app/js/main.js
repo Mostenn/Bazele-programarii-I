@@ -559,39 +559,55 @@ function task_20(a) {
 function task_21(a) {
     readData(a);
     let n = data.split(' ', 1);
-    let nmb;
 
     function matrix(n) {
         let table = document.createDocumentFragment();
         let arr = [];
+        let m = 0;
         for (let i = 0; i < n; i++) {
             let tr = document.createElement('tr');
             arr[i] = [];
             for (let j = 0; j < n; j++) {
+                m = m + 2;
                 let td = document.createElement('td');
-                td.innerHTML = arr[i][j] = getNumber();
+                td.innerHTML = arr[i][j] = m;
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        document.getElementById('matrix').appendChild(table);
+    }
+    // console.log(n);
+    matrix(n);
+}
+//
+function task_22(a) {
+    readData(a);
+    let n = data.split(' ', 1);
+    function matr() {
+        let table = document.createDocumentFragment();
+        let arr = [];
+        for (let i = 0; i < 2; i++) {
+            let tr = document.createElement('tr');
+            arr[i] = [];
+            for (let j = 0; j < 3; j++) {
+                let td = document.createElement('td');
+                td.innerHTML = arr[i][j] = getRandom();
                 tr.appendChild(td);
             }
             table.appendChild(tr);
         }
         document.getElementById('matrix').appendChild(table);
 
-        function getNumber() {
-            let m = 4;
-            for (let u = 0; u < m; u++) {
-                if (u == 0) {
-                    return 2;
-                }
-                return u;
-            }
+        function getRandom() {
+            let min = 2;
+            let max = 15;
+            return Math.floor(Math.random() * (max - min)) + min;
         }
     }
-    // console.log(n);
-    matrix(n);
+
 }
-//
-function task_22(a) {}
-//
-function task_23(a) {}
-//
-function task_24(a) {}
+    //
+    function task_23(a) {}
+    //
+    function task_24(a) {}

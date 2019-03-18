@@ -55,11 +55,13 @@ body {
   font-weight: 400;
 }
 
-#matrix {
+#matrix,
+#matrix2 {
   margin: 10px 0;
 }
 
-#matrix td {
+#matrix td,
+#matrix2 td {
   padding: 3px;
   border: 1px solid #000;
   text-align: center;

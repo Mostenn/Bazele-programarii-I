@@ -29,7 +29,6 @@ function readData2(a) {
 function result(a, res) {
     let elem = document.getElementById(a).getElementsByClassName('result')[0];
     elem.innerHTML = res;
-
 }
 //очистка введенных данных и результата прошлого вычисления
 function reset(a) {
@@ -39,6 +38,24 @@ function reset(a) {
     elem1.innerHTML = "";
     let elem2 = document.getElementById(a).getElementsByClassName('lab_input')[1];
     elem2.value = "";
+}
+
+function resetMatrix(a) {
+    let elem = document.getElementById(a).getElementsByClassName('lab_input')[0];
+    elem.value = "";
+    let matrix = document.getElementById('matrix');
+    while (matrix.firstChild) {
+        matrix.removeChild(matrix.firstChild);
+    }
+}
+
+function resetMatrix2(a) {
+    let elem = document.getElementById(a).getElementsByClassName('lab_input')[0];
+    elem.value = "";
+    let matrix2 = document.getElementById('matrix2');
+    while (matrix2.firstChild) {
+        matrix2.removeChild(matrix2.firstChild);
+    }
 }
 //преобразование строки введенных чисел через пробел в массив чисел
 function string(data) {
@@ -558,6 +575,7 @@ function task_20(a) {
 //
 function task_21(a) {
     readData(a);
+    resetMatrix(a);
     let n = data.split(' ', 1);
 
     function matrix(n) {
@@ -583,31 +601,54 @@ function task_21(a) {
 //
 function task_22(a) {
     readData(a);
+    resetMatrix2(a);
     let n = data.split(' ', 1);
-    function matr() {
+    n = n - 1;
+
+    function matr(n) {
         let table = document.createDocumentFragment();
         let arr = [];
-        for (let i = 0; i < 2; i++) {
+        let col = [];
+        for (let i = 0; i < 30; i++) {
             let tr = document.createElement('tr');
             arr[i] = [];
-            for (let j = 0; j < 3; j++) {
+            for (let j = 0; j < 30; j++) {
                 let td = document.createElement('td');
-                td.innerHTML = arr[i][j] = getRandom();
+                td.innerHTML = arr[i][j] = i;
                 tr.appendChild(td);
+                if (j == n) {
+                    td.style.backgroundColor = 'red';
+                    col.push(td.innerHTML);
+                }
             }
             table.appendChild(tr);
         }
-        document.getElementById('matrix').appendChild(table);
+
+        let e = col[0];
+        for (let i = 0; i < col.length; i++) {
+
+            res = true;
+
+            if (e < col[i]) {
+                e = col[i];
+            } else {
+                res = false;
+            }
+        }
+        
+        console.log(res);
+        document.getElementById('matrix2').appendChild(table);
 
         function getRandom() {
-            let min = 2;
-            let max = 15;
+            let min = 1;
+            let max = 25;
             return Math.floor(Math.random() * (max - min)) + min;
         }
     }
-
+    matr(n);
+    result(a, res);
 }
-    //
-    function task_23(a) {}
-    //
-    function task_24(a) {}
+//
+function task_23(a) {}
+//
+function task_24(a) {}
